@@ -28,8 +28,8 @@
 			$dialog.remove();
 		}
 		return $(
-			'<div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
-				'<div class="modal-dialog modal-m">' +
+			'<div class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
+				'<div class="modal-dialog">' +
 					'<div class="modal-content">' +
 						'<div class="modal-header" style="display: none;"></div>' +
 						'<div class="modal-body">' +
@@ -56,8 +56,7 @@
 		 *     When headerText is a not-empty string, "message" becomes a content
 		 *     above the progress bar and headerText string will be set as a text inside the H3;
 		 *   options.headerSize - this will generate a heading corresponding to the size number. Like <h1>, <h2>, <h3> etc;
-		 *   options.headerClass - extra class(es) for the header tag;
-		 *   options.dialogSize - bootstrap postfix for dialog size, e.g. "sm", "m";
+		 *   options.headerClass - extra class(es) for the header tag;		
 		 *   options.progressType - bootstrap postfix for progress bar type, e.g. "success", "warning";
 		 *   options.contentElement - determines the tag of the content element.
 		 *     Defaults to "p", which will generate a <p> tag;
@@ -75,7 +74,6 @@
 				headerText: '',
 				headerSize: 3,
 				headerClass: '',
-				dialogSize: 'm',
 				progressType: '',
 				contentElement: 'p',
 				contentClass: 'content',
@@ -88,7 +86,6 @@
 			$dialog = constructDialog($dialog);
 
 			// Configuring dialog
-			$dialog.find('.modal-dialog').attr('class', 'modal-dialog').addClass('modal-' + settings.dialogSize);
 			$dialog.find('.progress-bar').attr('class', 'progress-bar');
 			if (settings.progressType) {
 				$dialog.find('.progress-bar').addClass('progress-bar-' + settings.progressType);
